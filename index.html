@@ -299,7 +299,8 @@
   table.cmp tr.nom .mini b { background: var(--yellow); }
   table.cmp tr.nomsum .mini b { background: var(--yellow); }
   table.cmp { width:100%; border-collapse:collapse; font-size:12px; font-variant-numeric:tabular-nums; }
-  table.cmp th, table.cmp td { padding:4px 8px; text-align:right; border-bottom:1px solid var(--line); }
+  table.cmp th, table.cmp td { padding:4px 8px; text-align:right; border-bottom:1px solid var(--line); white-space:nowrap; }
+  table.cmp td:first-child { white-space:normal; }
   table.cmp th:first-child, table.cmp td:first-child { text-align:left; }
   table.cmp th { font-size:9.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); font-weight:800; }
   table.cmp tr.nom td:first-child { font-weight:800; box-shadow: inset 3px 0 0 var(--yellow); padding-left:10px; }
@@ -363,7 +364,7 @@
         <tr class="nom"><td>Prachi</td><td>101</td><td>61</td><td><span class="mini"><b style="width:60%"></b></span>60%</td><td>74%</td><td>81%</td><td><span class="mini"><b style="width:13%"></b></span>13%</td><td>12 d</td><td>12 d</td></tr>
         <tr class="nom"><td>Anuva</td><td>104</td><td>57</td><td><span class="mini"><b style="width:55%"></b></span>55%</td><td>66%</td><td>83%</td><td><span class="mini"><b style="width:18%"></b></span>18%</td><td>11 d</td><td>13 d</td></tr>
         <tr class="sum nomsum"><td>Nominees (3)</td><td>315</td><td>186</td><td><span class="mini"><b style="width:59%"></b></span>59%</td><td>70%</td><td>84%</td><td><span class="mini"><b style="width:17%"></b></span>17%</td><td>12 d</td><td>13 d</td></tr>
-        <tr class="sum"><td>Other core MathFit Mentors (5)</td><td>349</td><td>182</td><td><span class="mini"><b style="width:52%"></b></span>52%</td><td>60%</td><td>87%</td><td><span class="mini"><b style="width:23%"></b></span>23%</td><td>10–16 d</td><td>14 d</td></tr>
+        <tr class="sum"><td>Other core MathFit Mentors (5)</td><td>349</td><td>182</td><td><span class="mini"><b style="width:52%"></b></span>52%</td><td>60%</td><td>87%</td><td><span class="mini"><b style="width:23%"></b></span>23%</td><td>10–16&nbsp;d</td><td>14 d</td></tr>
       </table>
     </div>
   </div>
