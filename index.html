@@ -140,6 +140,8 @@
     line-height: 1.35;
   }
   .person .name { font-weight: 800; }
+  .person .quotes { margin-top: 4px; font-size: 11.2px; line-height: 1.3; color: var(--muted); }
+  .person .quotes q { font-style: italic; color: var(--ink); }
   .person .cohort { font-size: 10.5px; font-weight: 700; color: var(--muted); letter-spacing: .02em; margin-left: 6px; }
   .person b { font-weight: 800; background: rgba(255,186,7,0.22); padding: 0 3px; border-radius: 3px; }
 
@@ -219,9 +221,10 @@
     .kpi-grid { grid-template-columns: repeat(2, 1fr); }
     h1 { font-size: 26px; }
   }
-  @page { size: A4 portrait; margin: 7mm; }
+  @page { size: A4 portrait; margin: 5mm 6mm; }
   @media print {
     body { background: #FFFFFF; }
+    .page { zoom: 0.93; }
     .page { padding: 0; max-width: none; }
     .hero-card, .body-card, .person, .impact-card { box-shadow: none; border: 1px solid var(--line); }
     .hero-card { border-top: 5px solid var(--yellow); }
@@ -229,16 +232,30 @@
     .section { margin-top: 8px; }
     .body-card, .person, .impact-card, .reason-list li { font-size: 11.6px; line-height: 1.34; }
     .body-card { padding: 8px 16px; }
-    .person { padding: 6px 12px; }
+    .person { padding: 5px 12px; }
+    .person .quotes { font-size: 10.6px; line-height: 1.25; }
+    .person .cohort { font-size: 10px; }
+    .kpi .cap { font-size: 10px; }
+    .body-card p, .impact-card p { font-size: 11.3px; }
     .impact-card { padding: 8px 16px; }
     .hero-card { padding: 11px 22px 10px; }
     h1 { font-size: 23px; }
     .kpi-band { padding: 9px 18px; }
     .kpi .num { font-size: 20px; }
-    .kpi-grid { gap: 6px 16px; }
+    .kpi-grid { gap: 6px 12px; grid-template-columns: repeat(6, 1fr); }
+    .kpi .cap { font-size: 9.2px; line-height: 1.2; }
+    .kpi .num { font-size: 18px; }
+    .section { margin-top: 6px; }
+    .topbar { margin-bottom: 6px; }
+    .hero-card { padding: 9px 20px 8px; }
+    .names { margin-top: 4px; font-size: 14px; }
+    .meta-chips { margin-top: 6px; }
+    .label { margin-bottom: 2px; }
     .person-list { gap: 5px; }
     table.cmp td, table.cmp th { padding: 3px 8px; }
-    .footline { margin-top: 8px; padding-top: 6px; }
+    .footline { margin-top: 4px; padding-top: 3px; font-size: 11px; }
+    .impact-card p { font-size: 11px; line-height: 1.3; }
+    .reason-list li { margin-bottom: 3px; }
   }
 
   table.cmp { width:100%; border-collapse:collapse; font-size:12px; font-variant-numeric:tabular-nums; }
@@ -272,7 +289,7 @@
   <div class="section">
     <div class="label">Program Impact</div>
     <div class="body-card">
-      <p>In Q3 2026, Trial Training absorbed a record intake of 716 candidates (287 in September alone) while the training flow moved from RISE 3.0 to the new Training Tracker — and graduated <b>400 teachers</b>, the programme's best quarter yet.</p>
+      <p>In Q3 2026, Trial Training absorbed a record intake of 716 candidates (287 in September alone) while moving from RISE 3.0 to the new Training Tracker — and graduated <b>400 teachers</b>, its best quarter yet.</p>
     </div>
   </div>
 
@@ -303,9 +320,9 @@
 
   <div class="section">
     <div class="person-list">
-      <div class="person"><span class="name">Neethu</span> <span class="cohort">K-5 &amp; 3-8 · NAM, IME, APAC, EUK</span><br>Delivered <b>68 graduates — the most in the programme</b>, including the biggest single month this quarter (31 in September) while absorbing 42 new candidates across every region. Her session reviews are the most detailed in the team: ~200 words of ordered observation per class with the exact phrase to use next time. Mentees rate her 4.6/5.</div>
-      <div class="person"><span class="name">Prachi</span> <span class="cohort">3-8 &amp; 9-12 · NAM-led</span><br>Delivered <b>61 graduates at the best efficiency in the core team (67%)</b>, with a 13% drop rate and only 3 mock fails in 101 candidates — the team's senior-grade specialist, carrying the 9-12 cohort alongside 3-8. Her reviews explain the why behind each correction and target the Cuemath shift to student-led learning. Mentees score her 4.8/5 on being essential to clearing.</div>
-      <div class="person"><span class="name">Anuva</span> <span class="cohort">K-5 &amp; 3-8 · IME &amp; NAM, plus APAC, EUK</span><br>Delivered <b>57 graduates with zero candidates paused</b>, alongside Implementation Review and Final Evaluation duties. Feedback reaches the candidate <b>the same day</b> as a numbered checklist to rehearse against. Highest mentee rating surveyed, <b>4.9/5</b>; six of eight say they would likely have dropped without her.</div>
+      <div class="person"><span class="name">Neethu</span> <span class="cohort">Graduates: 3-8 56% · K-5 43% | NAM 40% · IME 29% · APAC 19% · EUK 11%</span><br>Delivered <b>68 graduates — the most in the programme</b>, including the biggest single month this quarter (31 in September). A true dual-cohort mentor, splitting her graduates almost evenly between K-5 and 3-8 across all four regions. Her session reviews are the most detailed in the team: ~200 words of ordered observation per class. Rated <b>4.6/5</b> by 9 mentees surveyed.<div class="quotes"><q>I had a doubt about a concept only two minutes before the class started. I immediately messaged Neethu Ma'am, and she responded quickly and clarified my doubt. Her timely support helped me conduct the class confidently.</q> — Vivek Singh Chauhan, 5/5<br><q>My mentor did call me up before the mock and reminder me of the things I had to take care of.</q> — Tasneem Anis, 5/5</div></div>
+      <div class="person"><span class="name">Prachi</span> <span class="cohort">Graduates: 3-8 46% · 9-12 40% · K-5 14% | NAM 64% · APAC 14% · IME 14% · EUK 8%</span><br>Delivered <b>61 graduates at the best efficiency in the core team (67%)</b>, with a 13% drop rate and only 3 mock fails in 101 candidates. The team's <b>senior-grade specialist</b>: four in ten of her graduates are 9-12 coaches, the hardest cohort to certify, mostly for NAM. Rated <b>4.8/5</b> on being essential to clearing by mentees surveyed.<div class="quotes"><q>She said that don't worry Kshitiz, I will manage time for you on weekends and we will complete it then to accommodate your office timings. … Prachi ma'am's reviews had the most minute detail done right which helped me to apply things in a better manner.</q> — Kshitiz Mitt, 5/5<br><q>My mentor helped me understand that in the Cuemath approach, students should do more of the thinking and talking while the teacher facilitates learning through questions and guidance. This feedback completely changed how I approached my classes.</q> — Karan Gauba, 5/5 on essential</div></div>
+      <div class="person"><span class="name">Anuva</span> <span class="cohort">Graduates: 3-8 67% · K-5 32% | IME 33% · NAM 28% · APAC 22% · EUK 16%</span><br>Delivered <b>57 graduates with zero candidates paused</b>, alongside Implementation Review and Final Evaluation duties. The team's most region-balanced mentor, with a 3-8 core and a third of her graduates in K-5. Feedback reaches the candidate <b>the same day</b> as a numbered checklist. <b>Highest mentee rating surveyed, 4.9/5</b>; six of eight say they would likely have dropped without her.<div class="quotes"><q>She helped me repeatedly. Even now, whenever I have doubt, she always respond. She is amazing.</q> — Pooja Sharma, 5/5<br><q>After final trial my mentor took 15 min just to ask me what was the problem as I got low score.</q> — Bhagyashri, 5/5<br><q>My Mentor was always on time, she scheduled my demo as per my time preference which was very helpful, she took her personal time to fill in for my doubts.</q> — Akshay Singh, 5/5</div></div>
     </div>
   </div>
 
@@ -326,8 +343,7 @@
   <div class="section">
     <div class="label">Going the Extra Mile</div>
     <div class="impact-card">
-      <p>The numbers come from how the three work. They take <b>intervention calls and counsel candidates</b> who stall — tracker notes show days of repeated calls and messages to bring paused candidates back — and <b>personalise feedback and sessions</b> to each candidate's gaps. They <b>adjust their own schedules</b> around working professionals, running mocks in evenings and on weekends (<i>"she said don't worry, I will manage time for you on weekends to accommodate your office timings"</i>). And they <b>hand-hold past graduation to the first class</b> (<i>"even now, whenever I have a doubt, she always responds"</i>; <i>"after my final trial she took 15 minutes just to ask what the problem was"</i>).</p>
-      <p><b>Ownership beyond their own KPIs:</b> in crunch weeks they step forward to <b>role-play and review for other mentors' candidates</b> so the programme lands a solid final number of certified coaches — the sheets show <b>123 Final Evaluation reviews on other mentors' mentees</b> this period (Prachi 63, Anuva 42, Neethu 18), none of which count toward their own graduate totals — together making <b>400 teachers Business Ready in JAS 2026</b>.</p>
+      <p>The numbers come from how the three work. They take <b>intervention calls and counsel candidates</b> who stall — tracker notes show days of repeated calls and messages to bring paused candidates back — and <b>personalise feedback and sessions</b> to each candidate's gaps. They <b>adjust their own schedules</b> around working professionals, running mocks in evenings and on weekends, and <b>hand-hold past graduation to the first class</b> (see Kshitiz, Pooja and Akshay above). <b>Ownership beyond their own KPIs:</b> in crunch weeks they step forward to <b>role-play and review for other mentors' candidates</b> so the programme lands a solid final number of certified coaches — <b>123 Final Evaluation reviews on other mentors' mentees</b> this period (Prachi 63, Anuva 42, Neethu 18), none counting toward their own totals — together making <b>400 teachers Business Ready in JAS 2026</b>.</p>
     </div>
   </div>
 
