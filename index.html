@@ -230,7 +230,9 @@
   @page { size: A4 portrait; margin: 5mm 6mm; }
   @media print {
     body { background: #FFFFFF; }
-    .page { zoom: 0.87; }
+    .page { zoom: 0.8; }
+    .piecard { padding: 6px 16px; }
+    .pie svg { width: 150px; height: 150px; }
     .section { margin-top: 5px; }
     .share { gap: 5px; padding: 8px 16px 7px; }
     .points { gap: 6px; }
@@ -300,6 +302,15 @@
   table.cmp .mini b { display: block; height: 100%; background: var(--ink); }
   table.cmp tr.nom .mini b { background: var(--yellow); }
   table.cmp tr.nomsum .mini b { background: var(--yellow); }
+
+  .piecard { background: var(--card); border-radius: 12px; padding: 10px 18px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); display: grid; grid-template-columns: 180px 1fr; gap: 16px; align-items: center; }
+  .pie svg { display: block; }
+  .pielegend { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(2, 1fr); gap: 3px 18px; font-size: 11.5px; }
+  .pielegend li { display: grid; grid-template-columns: 10px 1fr 34px 38px; gap: 8px; align-items: center; font-variant-numeric: tabular-nums; }
+  .pielegend li.nom span { font-weight: 800; }
+  .pielegend i { width: 10px; height: 10px; border-radius: 2px; display: block; }
+  .pielegend em { font-style: normal; text-align: right; color: var(--muted); }
+  .pielegend li.nom em { color: var(--ink); font-weight: 700; }
   table.cmp { width:100%; border-collapse:collapse; font-size:12px; font-variant-numeric:tabular-nums; }
   table.cmp th, table.cmp td { padding:4px 8px; text-align:right; border-bottom:1px solid var(--line); white-space:nowrap; }
   table.cmp td:first-child { white-space:normal; }
@@ -343,6 +354,14 @@
       <div class="point"><div class="big">186 <small>of 400</small></div><div class="head">Nearly half the Academy's output</div><div class="sub">47% of all Certified Cuemath Coaches this quarter, from 44% of its candidates — and 51% of the core team's output from 47% of its caseload.</div></div>
       <div class="point"><div class="big">70% <small>vs 60%</small></div><div class="head">More candidates carried to the finish</div><div class="sub">Share of their candidates reaching Final Evaluation, against the other five core Mentors. Drop rate 17% vs 23%; throughput 59% vs 52%; pass rate in line with the team.</div></div>
       <div class="point"><div class="big">4.8 <small>/ 5</small></div><div class="head">Average mentee rating of 4.8</div><div class="sub">The three highest mentee ratings in the Academy on "essential to clearing the Final Trial", with rubric scoring as strict as any Mentor's.</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="label sub">Share of the 400 Certified Cuemath Coaches</div>
+    <div class="piecard">
+      <div class="pie"><svg viewBox="0 0 200 200" width="180" height="180" role="img" aria-label="Share of Certified Cuemath Coaches by mentor"><path d="M100.0,8.0 A92,92 0 0,1 180.6,55.7 L149.1,73.0 A56,56 0 0,0 100.0,44.0 Z" fill="#FFBA07" stroke="#fff" stroke-width="1.5"/><text x="137.7" y="39.3" text-anchor="middle" font-size="9.5" font-weight="800" fill="#2B2B2B">17%</text><path d="M180.6,55.7 A92,92 0 0,1 182.6,140.5 L150.3,124.6 A56,56 0 0,0 149.1,73.0 Z" fill="#E9A400" stroke="#fff" stroke-width="1.5"/><text x="174.0" y="101.3" text-anchor="middle" font-size="9.5" font-weight="800" fill="#2B2B2B">15%</text><path d="M182.6,140.5 A92,92 0 0,1 120.1,189.8 L112.2,154.7 A56,56 0 0,0 150.3,124.6 Z" fill="#C98500" stroke="#fff" stroke-width="1.5"/><text x="145.8" y="161.1" text-anchor="middle" font-size="9.5" font-weight="800" fill="#2B2B2B">14%</text><path d="M120.1,189.8 A92,92 0 0,1 58.2,182.0 L74.6,149.9 A56,56 0 0,0 112.2,154.7 Z" fill="#2B2B2B" stroke="#fff" stroke-width="1.5"/><text x="90.7" y="176.4" text-anchor="middle" font-size="9.5" font-weight="800" fill="#fff">11%</text><path d="M58.2,182.0 A92,92 0 0,1 16.8,139.2 L49.3,123.8 A56,56 0 0,0 74.6,149.9 Z" fill="#454545" stroke="#fff" stroke-width="1.5"/><text x="46.9" y="154.5" text-anchor="middle" font-size="9.5" font-weight="800" fill="#fff">10%</text><path d="M16.8,139.2 A92,92 0 0,1 8.9,87.0 L44.6,92.1 A56,56 0 0,0 49.3,123.8 Z" fill="#5E5E5E" stroke="#fff" stroke-width="1.5"/><text x="26.8" y="114.0" text-anchor="middle" font-size="9.5" font-weight="800" fill="#fff">9%</text><path d="M8.9,87.0 A92,92 0 0,1 25.6,45.9 L54.7,67.1 A56,56 0 0,0 44.6,92.1 Z" fill="#777777" stroke="#fff" stroke-width="1.5"/><text x="31.4" y="75.2" text-anchor="middle" font-size="9.5" font-weight="800" fill="#fff">8%</text><path d="M25.6,45.9 A92,92 0 0,1 55.7,19.4 L73.0,50.9 A56,56 0 0,0 54.7,67.1 Z" fill="#909090" stroke="#fff" stroke-width="1.5"/><text x="51.1" y="47.5" text-anchor="middle" font-size="9.5" font-weight="800" fill="#fff">7%</text><path d="M55.7,19.4 A92,92 0 0,1 67.5,13.9 L80.2,47.6 A56,56 0 0,0 73.0,50.9 Z" fill="#B9B9B9" stroke="#fff" stroke-width="1.5"/><path d="M67.5,13.9 A92,92 0 0,1 100.0,8.0 L100.0,44.0 A56,56 0 0,0 80.2,47.6 Z" fill="#D9D9D9" stroke="#fff" stroke-width="1.5"/><text x="100" y="97" text-anchor="middle" font-size="22" font-weight="800" fill="#2B2B2B">400</text><text x="100" y="111" text-anchor="middle" font-size="8.5" font-weight="700" fill="#6B6B6B">CERTIFIED</text></svg></div>
+      <ul class="pielegend"><li class=nom><i style="background:#FFBA07"></i><span>Neethu</span><em>68</em><em>17%</em></li><li class=nom><i style="background:#E9A400"></i><span>Prachi</span><em>61</em><em>15%</em></li><li class=nom><i style="background:#C98500"></i><span>Anuva</span><em>57</em><em>14%</em></li><li><i style="background:#2B2B2B"></i><span>Smitha</span><em>44</em><em>11%</em></li><li><i style="background:#454545"></i><span>Ramani</span><em>42</em><em>10%</em></li><li><i style="background:#5E5E5E"></i><span>Shalini</span><em>37</em><em>9%</em></li><li><i style="background:#777777"></i><span>Dharmik</span><em>31</em><em>8%</em></li><li><i style="background:#909090"></i><span>Manini</span><em>28</em><em>7%</em></li><li><i style="background:#B9B9B9"></i><span>Reviewers</span><em>9</em><em>2%</em></li><li><i style="background:#D9D9D9"></i><span>Other</span><em>23</em><em>6%</em></li></ul>
     </div>
   </div>
 
