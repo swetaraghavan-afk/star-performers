@@ -68,6 +68,9 @@
     font-weight: 800;
     letter-spacing: -0.01em;
   }
+  .form { margin-top: 7px; display: grid; gap: 2px; font-size: 13px; }
+  .form .f { display: inline-block; min-width: 86px; font-weight: 800; color: var(--muted); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; }
+  .form .sep { color: var(--yellow); font-weight: 800; padding: 0 6px; }
   .names {
     margin-top: 7px;
     font-size: 15px;
@@ -102,6 +105,8 @@
     color: var(--muted);
     margin-bottom: 3px;
   }
+  .label.sub { font-size: 9px; color: var(--muted); letter-spacing: .12em; }
+  .label.sub::before { width: 10px; height: 2px; }
   .label::before {
     content: "";
     display: inline-block;
@@ -224,7 +229,14 @@
   @page { size: A4 portrait; margin: 5mm 6mm; }
   @media print {
     body { background: #FFFFFF; }
-    .page { zoom: 0.905; }
+    .page { zoom: 0.785; }
+    .section { margin-top: 5px; }
+    .share { gap: 5px; padding: 8px 16px 7px; }
+    .points { gap: 6px; }
+    .point { padding: 7px 10px 6px; }
+    .person-list { gap: 4px; }
+    .share .row { font-size: 10.8px; }
+    .point .sub { font-size: 10px; }
     .page { padding: 0; max-width: none; }
     .hero-card, .body-card, .person, .impact-card { box-shadow: none; border: 1px solid var(--line); }
     .hero-card { border-top: 5px solid var(--yellow); }
@@ -248,16 +260,44 @@
     .section { margin-top: 6px; }
     .topbar { margin-bottom: 6px; }
     .hero-card { padding: 9px 20px 8px; }
-    .names { margin-top: 4px; font-size: 14px; }
+    .form { margin-top: 7px; display: grid; gap: 2px; font-size: 13px; }
+  .form .f { display: inline-block; min-width: 86px; font-weight: 800; color: var(--muted); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; }
+  .form .sep { color: var(--yellow); font-weight: 800; padding: 0 6px; }
+  .names { margin-top: 4px; font-size: 14px; }
     .meta-chips { margin-top: 6px; }
     .label { margin-bottom: 2px; }
     .person-list { gap: 5px; }
     table.cmp td, table.cmp th { padding: 3px 8px; }
-    .footline { margin-top: 4px; padding-top: 3px; font-size: 11px; }
+    .footline { margin-top: 3px; padding-top: 2px; font-size: 11px; }
     .impact-card p { font-size: 11px; line-height: 1.3; }
     .reason-list li { margin-bottom: 3px; }
   }
 
+
+  /* Top points strip */
+  .points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .point { background: var(--card); border-radius: 10px; padding: 9px 12px 8px; border-top: 4px solid var(--yellow); box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+  .point .big { font-family: "Athletics", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif; font-size: 22px; font-weight: 800; line-height: 1.05; letter-spacing: -0.01em; }
+  .point .big small { font-size: 12px; font-weight: 700; color: var(--muted); }
+  .point .head { font-size: 11.5px; font-weight: 800; margin-top: 3px; }
+  .point .sub { font-size: 10.5px; color: var(--muted); line-height: 1.3; margin-top: 1px; }
+  /* Contribution bars */
+  .share { background: var(--card); border-radius: 12px; padding: 10px 18px 9px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); display: grid; gap: 7px; }
+  .share .row { display: grid; grid-template-columns: 150px 1fr 118px; align-items: center; gap: 12px; font-size: 11.5px; }
+  .share .row .lbl { font-weight: 800; }
+  .share .row .val { text-align: right; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .share .row .val small { font-weight: 600; color: var(--muted); }
+  .bar { display: flex; height: 16px; border-radius: 6px; overflow: hidden; background: var(--line); }
+  .bar span { display: flex; align-items: center; justify-content: center; font-size: 9.5px; font-weight: 800; white-space: nowrap; }
+  .bar .n { background: var(--yellow); color: var(--ink); }
+  .bar .o { background: var(--ink); color: #fff; }
+  .bar .r { background: #CFCFCF; color: var(--ink); }
+  .share .key { display: flex; gap: 14px; font-size: 10px; color: var(--muted); font-weight: 600; }
+  .share .key i { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 4px; vertical-align: -1px; }
+  table.cmp .mini { display: inline-block; width: 44px; height: 6px; border-radius: 3px; background: var(--line); vertical-align: middle; margin-right: 6px; overflow: hidden; }
+  table.cmp .mini b { display: block; height: 100%; background: var(--ink); }
+  table.cmp tr.nom .mini b { background: var(--yellow); }
+  table.cmp tr.nomsum .mini b { background: var(--yellow); }
   table.cmp { width:100%; border-collapse:collapse; font-size:12px; font-variant-numeric:tabular-nums; }
   table.cmp th, table.cmp td { padding:4px 8px; text-align:right; border-bottom:1px solid var(--line); }
   table.cmp th:first-child, table.cmp td:first-child { text-align:left; }
@@ -277,43 +317,56 @@
 
   <div class="hero-card">
     <h1>Delivery at Scale, Without Dropping Quality</h1>
-    <div class="names">Neethu Krishna<span class="sep">·</span>Prachi Pathak<span class="sep">·</span>Anuva Sharma</div>
-    <div class="meta-chips">
-      <span class="chip"><b>Award:</b> Alpha (Group)</span>
-      <span class="chip"><b>Rating:</b> 4.5/5</span>
-      <span class="chip"><b>Group:</b> Tutor Success | MathFit Training Academy — MathFit Mentors</span>
-      <span class="chip"><b>Duration:</b> JAS 2026 (July–September)</span>
+    <div class="form">
+      <div><span class="f">Award - 1 :</span> Alpha (Group)</div>
+      <div><span class="f">Group :</span> Neethu Krishna<span class="sep">·</span>Prachi Pathak<span class="sep">·</span>Anuva Sharma — MathFit Mentors, MathFit Training Academy</div>
+      <div><span class="f">Rating :</span> 4.5</div>
+      <div><span class="f">Duration :</span> Jul-Aug-Sep 2026</div>
     </div>
   </div>
 
   <div class="section">
-    <div class="label">Program Impact</div>
+    <div class="label">Program Impact :</div>
     <div class="body-card">
       <p>In Q3 2026, the MathFit Training Academy absorbed a record intake of 716 candidates (287 in September alone) while moving from RISE 3.0 to the new Training Tracker — and certified <b>400 MathFit Certified Coaches</b>, its best quarter yet.</p>
     </div>
   </div>
 
   <div class="section">
-    <div class="label">Reason for Nomination</div>
-    <div class="body-card">
-      <ul class="reason-list">
-        <li><b>Delivery at scale</b> — the three carried 44% of the Academy's candidates and delivered 47% of its MathFit Certified Coaches: 186 of 400.</li>
-        <li><b>Quality held under load</b> — throughput 59% vs 52% and drop rate 17% vs 23% against the other five core MathFit Mentors, with rubric scoring as strict as any mentor's (1–2% fail rates).</li>
-        <li><b>Consistency through change</b> — 532 of the 1,170 mock-session reviews this quarter, feedback within two days, and the highest mentee ratings on being essential to clearing the Final Trial.</li>
-      </ul>
+    <div class="label">Reason for Nomination :</div>
+    <div class="points">
+      <div class="point"><div class="big">186 <small>of 400</small></div><div class="head">Delivery at scale</div><div class="sub">47% of all MathFit Certified Coaches this quarter from 44% of the Academy's candidates — and 51% of the core team's output from 47% of its caseload.</div></div>
+      <div class="point"><div class="big">59% <small>vs 52%</small></div><div class="head">Quality held under load</div><div class="sub">Throughput against the other five core MathFit Mentors; drop rate 17% vs 23%. Rubric scoring as strict as any mentor's (1–2% fail rates), so the output is earned.</div></div>
+      <div class="point"><div class="big">532 <small>+ 123</small></div><div class="head">Consistency through change</div><div class="sub">532 of 1,170 mock-session reviews this quarter with feedback within two days, plus 123 Final Evaluation reviews for other Mentors' candidates, and the highest mentee ratings.</div></div>
     </div>
   </div>
 
   <div class="section">
-    <div class="label">Team Contribution — Core MathFit Mentors, JAS 2026</div>
+    <div class="label sub">Contribution — Nominees vs the Rest</div>
+    <div class="share">
+      <div class="row"><div class="lbl">MathFit Certified Coaches<br><span style="font-weight:600;color:var(--muted)">400 in JAS 2026</span></div>
+        <div class="bar"><span class="n" style="width:46.5%">186 · 47%</span><span class="o" style="width:45.5%">182 · 45%</span><span class="r" style="width:8%">32</span></div>
+        <div class="val">47%<br><small>of the Academy</small></div></div>
+      <div class="row"><div class="lbl">Core team output<br><span style="font-weight:600;color:var(--muted)">368 from 8 Mentors</span></div>
+        <div class="bar"><span class="n" style="width:50.5%">186 · 51%</span><span class="o" style="width:49.5%">182 · 49%</span></div>
+        <div class="val">51%<br><small>from 47% of caseload</small></div></div>
+      <div class="row"><div class="lbl">Core team caseload<br><span style="font-weight:600;color:var(--muted)">664 candidates started</span></div>
+        <div class="bar"><span class="n" style="width:47.4%">315 · 47%</span><span class="o" style="width:52.6%">349 · 53%</span></div>
+        <div class="val">+4 pts<br><small>output over caseload</small></div></div>
+      <div class="key"><span><i style="background:var(--yellow)"></i>Nominees (3)</span><span><i style="background:var(--ink)"></i>Other core MathFit Mentors (5)</span><span><i style="background:#CFCFCF"></i>Reviewers, team members, buddy mentors, unassigned</span></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="label sub">Team Contribution — Core MathFit Mentors, JAS 2026</div>
     <div class="body-card">
       <table class="cmp">
         <tr><th>Mentor</th><th>Started</th><th>Graduated</th><th>Throughput</th><th>Efficiency</th><th>Drop rate</th><th>Mock fails</th><th>Median TAT</th></tr>
-        <tr class="nom"><td>Neethu</td><td>110</td><td>68</td><td>62%</td><td>62%</td><td>21%</td><td>8</td><td>9 d</td></tr>
-        <tr class="nom"><td>Prachi</td><td>101</td><td>61</td><td>60%</td><td>67%</td><td>13%</td><td>3</td><td>9 d</td></tr>
-        <tr class="nom"><td>Anuva</td><td>104</td><td>57</td><td>55%</td><td>59%</td><td>18%</td><td>8</td><td>10 d</td></tr>
-        <tr class="sum"><td>Nominees (3)</td><td>315</td><td>186</td><td>59%</td><td>–</td><td>17%</td><td>19</td><td>9–10 d</td></tr>
-        <tr class="sum"><td>Other core MathFit Mentors (5)</td><td>349</td><td>182</td><td>52%</td><td>–</td><td>23%</td><td>28</td><td>8–13 d</td></tr>
+        <tr class="nom"><td>Neethu</td><td>110</td><td>68</td><td><span class="mini"><b style="width:62%"></b></span>62%</td><td>62%</td><td><span class="mini"><b style="width:21%"></b></span>21%</td><td>8</td><td>9 d</td></tr>
+        <tr class="nom"><td>Prachi</td><td>101</td><td>61</td><td><span class="mini"><b style="width:60%"></b></span>60%</td><td>67%</td><td><span class="mini"><b style="width:13%"></b></span>13%</td><td>3</td><td>9 d</td></tr>
+        <tr class="nom"><td>Anuva</td><td>104</td><td>57</td><td><span class="mini"><b style="width:55%"></b></span>55%</td><td>59%</td><td><span class="mini"><b style="width:18%"></b></span>18%</td><td>8</td><td>10 d</td></tr>
+        <tr class="sum nomsum"><td>Nominees (3)</td><td>315</td><td>186</td><td><span class="mini"><b style="width:59%"></b></span>59%</td><td>–</td><td><span class="mini"><b style="width:17%"></b></span>17%</td><td>19</td><td>9–10 d</td></tr>
+        <tr class="sum"><td>Other core MathFit Mentors (5)</td><td>349</td><td>182</td><td><span class="mini"><b style="width:52%"></b></span>52%</td><td>–</td><td><span class="mini"><b style="width:23%"></b></span>23%</td><td>28</td><td>8–13 d</td></tr>
       </table>
     </div>
   </div>
@@ -341,7 +394,7 @@
   </div>
 
   <div class="section">
-    <div class="label">Going the Extra Mile</div>
+    <div class="label sub">Going the Extra Mile</div>
     <div class="impact-card">
       <p>The numbers come from how the three work. They take <b>intervention calls and counsel candidates</b> who stall — tracker notes show days of repeated calls and messages to bring paused candidates back — and <b>personalise feedback and sessions</b> to each candidate's gaps. They <b>adjust their own schedules</b> around working professionals, running mocks in evenings and on weekends, and <b>hand-hold past graduation to the first class</b> (see Kshitiz, Pooja and Akshay above). <b>Ownership beyond their own KPIs:</b> in crunch weeks they step forward to <b>role-play and review for other MathFit Mentors' candidates</b> so the Academy lands a solid final number of MathFit Certified Coaches — <b>123 Final Evaluation reviews on other Mentors' mentees</b> this period (Prachi 63, Anuva 42, Neethu 18), none counting toward their own totals — together delivering <b>400 MathFit Certified Coaches in JAS 2026</b>.</p>
     </div>
