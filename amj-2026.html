@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>From AI Adoption to Scale — AMJ 2026 Nomination</title>
+<style>
+  :root {
+    --yellow: #FFBA07;
+    --ink: #2B2B2B;
+    --bg: #F5F5F5;
+    --card: #FFFFFF;
+    --muted: #6B6B6B;
+    --line: #E8E8E8;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body {
+    background: var(--bg);
+    color: var(--ink);
+    font-family: "Untitled Sans", "Athletics", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  .page {
+    max-width: 860px;
+    margin: 0 auto;
+    padding: 14px 22px 14px;
+  }
+
+  /* Header */
+  .topbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-bottom: 10px;
+  }
+  .brand {
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    font-size: 13px;
+  }
+  .brand .dot { color: var(--yellow); }
+  .quarter-tag {
+    background: var(--yellow);
+    color: var(--ink);
+    font-weight: 700;
+    font-size: 12px;
+    letter-spacing: 0.08em;
+    padding: 5px 12px;
+    border-radius: 4px;
+    text-transform: uppercase;
+  }
+
+  /* Title block */
+  .hero-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 15px 26px 13px;
+    border-top: 5px solid var(--yellow);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+  }
+  h1 {
+    font-family: "Athletics", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    font-size: 25px;
+    line-height: 1.12;
+    font-weight: 800;
+    letter-spacing: -0.01em;
+  }
+  .form { margin-top: 7px; display: grid; gap: 2px; font-size: 13px; }
+  .form .f { display: inline-block; min-width: 86px; font-weight: 800; color: var(--muted); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; }
+  .form .sep { color: var(--yellow); font-weight: 800; padding: 0 6px; }
+  .names {
+    margin-top: 7px;
+    font-size: 15px;
+    font-weight: 700;
+  }
+  .names .sep { color: var(--yellow); font-weight: 800; padding: 0 6px; }
+  .meta-chips {
+    display: flex;
+    flex-wrap: nowrap;
+    gap: 6px;
+    margin-top: 9px;
+  }
+  .chip {
+    font-size: 10.5px;
+    font-weight: 600;
+    color: var(--ink);
+    background: var(--bg);
+    border: 1px solid var(--line);
+    border-radius: 999px;
+    padding: 3px 9px;
+    white-space: nowrap;
+  }
+  .chip b { font-weight: 800; }
+
+  /* Sections */
+  .section { margin-top: 9px; }
+  .label {
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--muted);
+    margin-bottom: 3px;
+  }
+  .label.sub { font-size: 9px; color: var(--muted); letter-spacing: .12em; }
+  .label.sub::before { width: 10px; height: 2px; }
+  .label::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 3px;
+    background: var(--yellow);
+    border-radius: 2px;
+    margin-right: 8px;
+    vertical-align: 2px;
+  }
+  .body-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 11px 18px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    font-size: 12.5px;
+    line-height: 1.42;
+  }
+  .body-card p + p { margin-top: 8px; }
+  .justification { font-style: italic; }
+  .reason-list { margin: 0; padding-left: 18px; }
+  .reason-list li { font-size: 12.5px; line-height: 1.38; margin-bottom: 5px; }
+  .reason-list li:last-child { margin-bottom: 0; }
+  .reason-list li::marker { color: var(--yellow); font-weight: 800; }
+  .reason-list b { font-weight: 800; }
+
+  /* Individual hero lines */
+  .person-list { display: grid; gap: 6px; }
+  .person {
+    background: var(--card);
+    border-radius: 10px;
+    padding: 8px 14px;
+    border-left: 4px solid var(--yellow);
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    font-size: 12.5px;
+    line-height: 1.35;
+  }
+  .person .name { font-weight: 800; }
+  .person .quotes { margin-top: 4px; font-size: 11.2px; line-height: 1.3; color: var(--muted); }
+  .person .quotes q { font-style: italic; color: var(--ink); }
+  .person .cohort { font-size: 10.5px; font-weight: 700; color: var(--muted); letter-spacing: .02em; margin-left: 6px; }
+  .person b { font-weight: 800; background: rgba(255,186,7,0.22); padding: 0 3px; border-radius: 3px; }
+
+  /* KPI band */
+  .kpi-band {
+    background: var(--ink);
+    border-radius: 12px;
+    padding: 12px 20px 12px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  }
+  .kpi-band .band-title {
+    color: #CFCFCF;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    margin-bottom: 9px;
+  }
+  .kpi-band .band-title::before {
+    content: "";
+    display: inline-block;
+    width: 18px;
+    height: 3px;
+    background: var(--yellow);
+    border-radius: 2px;
+    margin-right: 8px;
+    vertical-align: 2px;
+  }
+  .kpi-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px 18px;
+  }
+  .kpi .num {
+    font-family: "Athletics", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif;
+    color: var(--yellow);
+    font-size: 23px;
+    font-weight: 800;
+    line-height: 1.05;
+    letter-spacing: -0.01em;
+  }
+  .kpi .num small { font-size: 13px; font-weight: 700; }
+  .kpi .cap {
+    color: #E6E6E6;
+    font-size: 10.5px;
+    line-height: 1.3;
+    margin-top: 3px;
+  }
+
+  /* Common impact */
+  .impact-card {
+    background: var(--card);
+    border-radius: 12px;
+    padding: 10px 18px;
+    box-shadow: 0 1px 4px rgba(0,0,0,0.06);
+    font-size: 12.5px;
+    line-height: 1.4;
+  }
+  .impact-card b { font-weight: 800; background: rgba(255,186,7,0.22); padding: 0 3px; border-radius: 3px; }
+
+  /* Footer */
+  .footline {
+    margin-top: 12px;
+    padding-top: 8px;
+    border-top: 2px solid var(--yellow);
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    gap: 8px;
+    font-size: 12.5px;
+    color: var(--muted);
+    font-weight: 600;
+  }
+  .footline .nominator { color: var(--ink); font-weight: 700; }
+
+  @media (max-width: 640px) {
+    .kpi-grid { grid-template-columns: repeat(2, 1fr); }
+    h1 { font-size: 26px; }
+  }
+  @page { size: A4 portrait; margin: 5mm 6mm; }
+  @media print {
+    body { background: #FFFFFF; }
+    .page { zoom: 0.9; }
+    .section { margin-top: 5px; }
+    .share { gap: 5px; padding: 8px 16px 7px; }
+    .points { gap: 6px; }
+    .point { padding: 7px 10px 6px; }
+    .person-list { gap: 4px; }
+    .share .row { font-size: 10.8px; }
+    .point .sub { font-size: 10px; }
+    .page { padding: 0; max-width: none; }
+    .hero-card, .body-card, .person, .impact-card { box-shadow: none; border: 1px solid var(--line); }
+    .hero-card { border-top: 5px solid var(--yellow); }
+    .person { border-left: 4px solid var(--yellow); }
+    .section { margin-top: 8px; }
+    .body-card, .person, .impact-card, .reason-list li { font-size: 11.6px; line-height: 1.34; }
+    .body-card { padding: 8px 16px; }
+    .person { padding: 5px 12px; }
+    .person .quotes { font-size: 10.6px; line-height: 1.25; }
+    .person .cohort { font-size: 10px; }
+    .kpi .cap { font-size: 10px; }
+    .body-card p, .impact-card p { font-size: 11.3px; }
+    .impact-card { padding: 8px 16px; }
+    .hero-card { padding: 11px 22px 10px; }
+    h1 { font-size: 23px; }
+    .kpi-band { padding: 9px 18px; }
+    .kpi .num { font-size: 20px; }
+    .kpi-grid { gap: 6px 12px; grid-template-columns: repeat(6, 1fr); }
+    .kpi .cap { font-size: 9.2px; line-height: 1.2; }
+    .kpi .num { font-size: 18px; }
+    .section { margin-top: 6px; }
+    .topbar { margin-bottom: 6px; }
+    .hero-card { padding: 9px 20px 8px; }
+    .form { margin-top: 7px; display: grid; gap: 2px; font-size: 13px; }
+  .form .f { display: inline-block; min-width: 86px; font-weight: 800; color: var(--muted); font-size: 11px; letter-spacing: .06em; text-transform: uppercase; }
+  .form .sep { color: var(--yellow); font-weight: 800; padding: 0 6px; }
+  .names { margin-top: 4px; font-size: 14px; }
+    .meta-chips { margin-top: 6px; }
+    .label { margin-bottom: 2px; }
+    .person-list { gap: 5px; }
+    table.cmp td, table.cmp th { padding: 3px 8px; }
+    .footline { margin-top: 3px; padding-top: 2px; font-size: 11px; }
+    .impact-card p { font-size: 11px; line-height: 1.3; }
+    .reason-list li { margin-bottom: 3px; }
+  }
+
+
+  /* Top points strip */
+  .points { display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+  .point { background: var(--card); border-radius: 10px; padding: 9px 12px 8px; border-top: 4px solid var(--yellow); box-shadow: 0 1px 4px rgba(0,0,0,0.06); }
+  .point .big { font-family: "Athletics", -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", Arial, sans-serif; font-size: 22px; font-weight: 800; line-height: 1.05; letter-spacing: -0.01em; }
+  .point .big small { font-size: 12px; font-weight: 700; color: var(--muted); }
+  .point .head { font-size: 11.5px; font-weight: 800; margin-top: 3px; }
+  .point .sub { font-size: 10.5px; color: var(--muted); line-height: 1.3; margin-top: 1px; }
+  /* Contribution bars */
+  .share { background: var(--card); border-radius: 12px; padding: 10px 18px 9px; box-shadow: 0 1px 4px rgba(0,0,0,0.06); display: grid; gap: 7px; }
+  .share .row { display: grid; grid-template-columns: 150px 1fr 118px; align-items: center; gap: 12px; font-size: 11.5px; }
+  .share .row .lbl { font-weight: 800; }
+  .share .row .val { text-align: right; font-weight: 800; font-variant-numeric: tabular-nums; }
+  .share .row .val small { font-weight: 600; color: var(--muted); }
+  .bar { display: flex; height: 16px; border-radius: 6px; overflow: hidden; background: var(--line); }
+  .bar span { display: flex; align-items: center; justify-content: center; font-size: 9.5px; font-weight: 800; white-space: nowrap; }
+  .bar .n { background: var(--yellow); color: var(--ink); }
+  .bar .o { background: var(--ink); color: #fff; }
+  .bar .r { background: #CFCFCF; color: var(--ink); }
+  .share .key { display: flex; gap: 14px; font-size: 10px; color: var(--muted); font-weight: 600; }
+  .share .key i { display: inline-block; width: 9px; height: 9px; border-radius: 2px; margin-right: 4px; vertical-align: -1px; }
+  table.cmp .mini { display: inline-block; width: 44px; height: 6px; border-radius: 3px; background: var(--line); vertical-align: middle; margin-right: 6px; overflow: hidden; }
+  table.cmp .mini b { display: block; height: 100%; background: var(--ink); }
+  table.cmp tr.nom .mini b { background: var(--yellow); }
+  table.cmp tr.nomsum .mini b { background: var(--yellow); }
+  table.cmp { width:100%; border-collapse:collapse; font-size:12px; font-variant-numeric:tabular-nums; }
+  table.cmp th, table.cmp td { padding:4px 8px; text-align:right; border-bottom:1px solid var(--line); }
+  table.cmp th:first-child, table.cmp td:first-child { text-align:left; }
+  table.cmp th { font-size:9.5px; letter-spacing:.08em; text-transform:uppercase; color:var(--muted); font-weight:800; }
+  table.cmp tr.nom td:first-child { font-weight:800; box-shadow: inset 3px 0 0 var(--yellow); padding-left:10px; }
+  table.cmp tr.sum td { font-weight:800; background: var(--bg); }
+  table.cmp tr:last-child td { border-bottom:0; }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <div class="topbar">
+    <div class="brand">CUEMATH<span class="dot"> ·</span> STAR PERFORMERS — TUTOR SUCCESS AWARDS</div>
+    <div class="quarter-tag">AMJ 2026</div>
+  </div>
+
+  <div class="hero-card">
+    <h1>Scaling Quality with AI Calibration and Automations</h1>
+    <div class="form">
+      <div><span class="f">Award - 1 :</span> Alpha (Group)</div>
+      <div><span class="f">Group :</span> Chitra Gopal<span class="sep">·</span>Vidhi Maheshwari<span class="sep">·</span>Amartya Chakraborty — Tutor Success | Tutor Hiring — Training &amp; Quality</div>
+      <div><span class="f">Rating :</span> 4.5/5</div>
+      <div><span class="f">Duration :</span> Apr-May-Jun 2026</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="label">Program Impact :</div>
+    <div class="body-card">
+      <p>In Q2 2026, the Tutor Success quality team took class review and screening from AI adoption to AI at scale — <b>333 teachers made Business Ready</b> behind quality gates that were calibrated, automated and run by these three.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="label">Reason for Nomination :</div>
+    <div class="points">
+      <div class="point"><div class="big">98.5<small>%</small></div><div class="head">Individual contributions to AI calibration</div><div class="sub">Developed and calibrated the tools automating the Tutor Hiring Process — the AI Communications Test calibrated to 98.5% accuracy across 100+ samples.</div></div>
+      <div class="point"><div class="big">±0.20</div><div class="head">In-depth collaboration with Product</div><div class="sub">On the Class Reviewer, automating Instructional Reviews — human-to-LLM score agreement held within ±0.20 across multiple iterations.</div></div>
+      <div class="point"><div class="big">333</div><div class="head">Quality gates executed at scale</div><div class="sub">333 teachers delivered Business Ready in AMJ 2026, with the Class Evaluation Reviewer cutting review time by 75%.</div></div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="label sub">Team Contribution</div>
+    <div class="body-card">
+      <p><b>Chitra, Vidhi and Amartya</b> were the <b>human-review backbone behind Cuemath's LLM class-reviewer</b>. In collaboration with the product team across multiple iterations they completed 45+ nuanced blind double reviews of live classes against a new LLM friendly evolving rubric — each review running ~2.5 hours — while fine tuning the rubric and calibration. Their discipline held reviewer agreement within ±0.20 of LLM scores.</p>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="person-list">
+      <div class="person"><span class="name">Chitra</span> drove human <b>calibration of the AI Communications Test</b> across 100+ samples — <b>98.5% accuracy</b>, cutting ~55% of downstream quality leakage.</div>
+      <div class="person"><span class="name">Vidhi</span> was the liaison with the product team on the Class Reviewer — <b>project-managed the process and delivery of the LLM centric reviews across multiple iterations</b>.</div>
+      <div class="person"><span class="name">Amartya</span> built the automated <b>Class Evaluation Reviewer</b>, now in pilot — <b>75% less review time</b>.</div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="kpi-band">
+      <div class="band-title">AMJ 2026 — Calibration &amp; Scale Dashboard</div>
+      <div class="kpi-grid">
+        <div class="kpi"><div class="num">98.5<small>%</small></div><div class="cap">Screening-calibration accuracy, AI Communications Test</div></div>
+        <div class="kpi"><div class="num">±0.20</div><div class="cap">LLM-to-human score gap in Class Reviewer</div></div>
+        <div class="kpi"><div class="num">75<small>%</small></div><div class="cap">Review-time reduction — Class Evaluation Reviewer</div></div>
+        <div class="kpi"><div class="num">333</div><div class="cap">Teachers made Business Ready, AMJ 2026</div></div>
+        <div class="kpi"><div class="num">~200<small> hrs</small></div><div class="cap">Review time invested across double reviews</div></div>
+        <div class="kpi"><div class="num">45<small>+</small></div><div class="cap">Blind double reviews of live classes, ~2.5 hrs each</div></div>
+      </div>
+    </div>
+  </div>
+
+  <div class="section">
+    <div class="label sub">Common Impact</div>
+    <div class="impact-card">
+      <p>In addition, the three took full ownership of executing reviews at scale for the new Tutor Hiring Process — Amartya managed the Class Performance Reviews, Chitra managed the Final Trial Performance Reviews, and Vidhi ran the delivery of actual Trial Reviews to ensure availability and quality of new teachers for Mapping — together contributing significantly in making <b>333 teachers Business Ready in AMJ 2026</b>.</p>
+    </div>
+  </div>
+
+  <div class="footline">
+    <span></span>
+    <span class="nominator">Nominated by Sweta Raghavan</span>
+  </div>
+
+</div>
+</body>
+</html>
